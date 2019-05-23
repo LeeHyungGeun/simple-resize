@@ -32,6 +32,7 @@
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
-    "rxjs": "^6.5.2"
+    "rxjs": "^6.5.2",
+    "wat-type": "^0.0.5"
   }
 }
