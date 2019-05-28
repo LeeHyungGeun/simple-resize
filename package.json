@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "remove:dist": "rm -rf ./dist && mkdir ./dist",
-    "build:last": "npm run remove:dist && node_modules/.bin/babel src -d dist --source-maps --minified --compact",
-    "build": "NODE_ENV=production npm run remove:dist && node_modules/.bin/rollup -c",
-    "dev":  "NODE_ENV=development node_modules/.bin/rollup -c -w"
+    "build": "NODE_ENV=production npm run remove:dist && ./node_modules/.bin/babel-node ./scripts/build.js",
+    "dev": "NODE_ENV=development node_modules/.bin/babel-node ./scripts/start.js",
+    "start": "npm run dev"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
+    "open": "^6.3.0",
     "rollup": "^1.12.3",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^10.0.0",
