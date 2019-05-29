@@ -10,9 +10,10 @@ const simpleResize = function simpleResize($elm) {
     return new Error('$elm should be string or HTMLElement.')
   }
 
-  if (!watType.isHTMLElement($elm)) {
+  if (watType.isHTMLElement($elm)) {
+    $self.$elm = $elm
+  } else {
     $self.$elm = document.querySelector($elm)
-    document.body.appendChild($self.$elm)
   }
 
   if (!$self.$elm) {
