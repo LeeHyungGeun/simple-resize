@@ -4,7 +4,6 @@ import resize from './resize'
 import state from './state'
 
 let component = ($self, $elm, options = {}) => {
-  console.log($self)
   $self.options = Object.assign({}, componentStyle, options)
   // $self.$elm = $elm
   $self.state = state
