@@ -18,12 +18,14 @@ const pkg = {
 export default {
   input: 'src/lib/simple-resize.js',
   output: {
-    name: 'simpleResize',
+    name: 'window',
+    // moduleName: 'window',
     file: pkg.all,
     sourcemap: true,
     strict: true,
     format: 'umd',
     exports: 'named',
+    extend: true,
   },
   plugins: [
     // memory({
@@ -72,6 +74,7 @@ export default {
     replace({
       exclude: 'node_modules/**',
       ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+      // SimpleResize: `window.SimpleResize = 'default' in SimpleResize ? SimpleResize['default'] : SimpleResize`
     }),
     // (process.env.NODE_ENV && uglify())
   ]
